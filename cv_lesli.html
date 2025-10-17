@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Lesli Garcia</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* *************************************
+         * ESTILOS CSS               *
+         *************************************
+        */
+
+        /* PALETA DE COLORES */
+        :root {
+            --primary-dark: #333ba0; 
+            --primary-light: #babbff; 
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-page: #f0f0f0; 
+            --section-title: #34495e; 
+        }
+
+        /* 1. ESTILO DEL CUERPO (EL FONDO DE LA PÁGINA) */
+        body {
+            background-color: var(--bg-page); 
+            display: flex; 
+            justify-content: center; 
+            align-items: flex-start; /* Alinea arriba para que la hoja no esté flotando */
+            min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+            padding: 20px 0; 
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* 2. ESTILO DE LA HOJA (EL CONTENEDOR PRINCIPAL DEL CV) */
+        .hoja-cv {
+            max-width: 900px; /* Un poco más ancho para las dos columnas */
+            width: 100%; 
+            background-color: white; 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+            min-height: 1200px; /* Altura mínima para simular una hoja grande */
+            display: flex; /* Para las dos columnas */
+            position: relative; /* Para las formas orgánicas de fondo */
+            overflow: hidden; /* Oculta partes de las formas que se desborden */
+        }
+
+        /* FORMAS ORGÁNICAS DE FONDO (CSS pseudo-elementos) */
+        .hoja-cv::before, .hoja-cv::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            opacity: 0.3; /* Menor opacidad para que sea un detalle sutil */
+            z-index: 0; /* Detrás del contenido */
+        }
+        
+        .hoja-cv::before { /* Forma superior izquierda */
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            transform: rotate(-20deg);
+        }
+
+        .hoja-cv::after { /* Forma inferior derecha */
+            bottom: -100px;
+            right: -100px;
+            width: 350px;
+            height: 350px;
+            border-radius: 60% 40% 30% 70% / 60% 70% 30% 40%;
+            transform: rotate(30deg);
+        }
+
+        /* LAYOUT DE COLUMNAS */
+        .columna-lateral {
+            width: 35%; /* Ancho de la columna lateral */
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 40px 30px;
+            position: relative;
+            z-index: 1; /* Asegura que el contenido esté por encima de las formas */
+        }
+
+        .columna-principal {
+            width: 65%; /* Ancho de la columna principal */
+            padding: 40px 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FOTO DE PERFIL */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-light); /* Borde claro */
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2); /* Sombra exterior */
+        }
+
+        /* INFORMACIÓN DE CABECERA (NOMBRE Y TÍTULO) */
+        .nombre-cv {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .nombre-cv h1 {
+            color: var(--primary-dark); /* Color oscuro para el nombre */
+            font-size: 2.8em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nombre-cv p {
+            color: var(--text-dark);
+            font-size: 1.1em;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* SECCIONES LATERALES (CONTACTO, IDIOMAS, HABILIDADES) */
+        .section-lateral {
+            margin-bottom: 35px;
+        }
+        .section-lateral h3 {
+            color: var(--text-light);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Línea divisoria */
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .section-lateral h3 .fas { /* Iconos de los títulos de sección */
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-item, .idiom-item, .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-item .fas, .idiom-item .fas {
+            margin-right: 15px;
+            font-size: 1.1em;
+            color: var(--primary-light); /* Color del icono */
+        }
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .contact-item span, .idiom-item span {
+            font-size: 0.95em;
+        }
+        .skill-item {
+            margin-bottom: 8px;
+        }
+        .skill-item .fas {
+            margin-right: 10px;
+            font-size: 0.8em;
+            color: var(--primary-light);
+        }
+
+        /* SECCIONES PRINCIPALES (SOBRE MÍ, FORMACIÓN, EXPERIENCIA) */
+        .section-principal {
+            margin-bottom: 40px;
+        }
+        .section-principal h2 {
+            color: var(--section-title); /* Color para títulos de sección principal */
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .section-principal h2 .fas {
+            margin-right: 12px;
+            font-size: 0.9em;
+            color: var(--primary-dark);
+        }
+
+        .experience-item, .education-item, .update-item {
+            margin-bottom: 20px;
+        }
+        .experience-item h3, .education-item h3, .update-item h3 {
+            color: var(--primary-dark); /* Títulos de cargo/carrera */
+            font-size: 1.25em;
+            margin-bottom: 5px;
+        }
+        .experience-item p, .education-item p, .update-item p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .experience-item ul {
+            list-style: disc; /* Vuelven a ser puntos para la experiencia */
+            margin-left: 20px;
+            color: var(--text-dark);
+            font-size: 0.9em;
+        }
+        .experience-item ul li {
+            margin-bottom: 5px;
+        }
+
+        /* PARA QUE EL ENLACE DEL HEADER NO TENGA ESTILO DE CONTACTO */
+        .nombre-cv a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* AJUSTES RESPONSIVE PARA MÓVILES */
+        @media (max-width: 900px) {
+            body {
+                padding: 0;
+                background-color: white; 
+                align-items: flex-start; /* Vuelve a alinear arriba */
+            }
+            
+            .hoja-cv {
+                max-width: 100%; 
+                min-height: auto; /* Altura automática en móviles */
+                box-shadow: none; 
+                flex-direction: column; /* Apila las columnas verticalmente */
+            }
+
+            .hoja-cv::before, .hoja-cv::after { /* Oculta las formas orgánicas en móviles */
+                display: none;
+            }
+
+            .columna-lateral, .columna-principal {
+                width: 100%; /* Ambas columnas ocupan todo el ancho */
+                padding: 30px 20px; /* Reduce el padding */
+            }
+
+            .columna-lateral {
+                background-color: var(--primary-dark);
+            }
+
+            .profile-section {
+                margin-bottom: 20px;
+            }
+
+            .nombre-cv h1 {
+                font-size: 2em;
+            }
+            .nombre-cv p {
+                font-size: 1em;
+            }
+            
+            .section-principal h2 {
+                font-size: 1.5em;
+            }
+
+            .section-lateral h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hoja-cv">
+        <div class="columna-lateral">
+            <div class="profile-section">
+                <img src="lesli.jpg" alt="Foto de Perfil" class="profile-pic">
+            </div>
+
+            <div class="section-lateral">
+                <h3><i class="fas fa-id-card"></i> Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i> <span>+52 495 958 1203</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> <a href="mailto:lesligarciaserna@gmail.com">lesligarciaserna@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i> <span>Aguascalientes, México</span>
+                </div>
+            </div>
+
+            <div class="section-lateral">
+                <h3><i class="fas fa-language"></i> Idiomas</h3>
+                <div class="idiom-item">
+                    <i class="fas fa-caret-right"></i> <span>Español: Nativo</span>
+                </div>
+                <div class="idiom-item">
+                    <i class="fas fa-caret-right"></i> <span>Inglés: Avanzado</span>
+                </div>
+            </div>
+
+            <div class="section-lateral">
+                <h3><i class="fas fa-tools"></i> Habilidades</h3>
+                <div class="skill-item">
+                    <i class="fas fa-star"></i> <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-star"></i> <span>Java</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-star"></i> <span>Manejo de SQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-star"></i> <span>Manejo de GitHub</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-star"></i> <span>Pandas y NumPy</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-star"></i> <span>Conceptos de Redes Neuronales</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="columna-principal">
+            <div class="nombre-cv">
+                <h1>Lesli Garcia Serna</h1>
+                <p>Tecnico Superior Universitario en Inteligencia Artificial</p>
+            </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-user"></i> Sobre Mí</h2>
+                <p>Estudiante avanzada de Ingeniería en Inteligencia Artificial con una sólida base en Machine Learning,
+                     Deep Learning y procesamiento de datos. 
+                     Apasionada por la aplicación práctica de modelos predictivos para la resolución de problemas complejos. 
+                     Busco una oportunidad para aplicar mis habilidades en Python.
+                    
+                   
+                </p>
+            </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
+                <div class="education-item">
+                    <h3>TSU en Inteligencia Artificial</h3>
+                    <p>Universidad Tecnologica de Calvillo | 2024 - 2026</p>
+                </div>
+            </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-briefcase"></i> PROYECTOS Y EXPERIENCIA TÉCNICA</h2>
+                <div class="experience-item">
+                    <h3>Proyecto: Aplicación Móvil para Fomento del Reciclaje: "WASTE WATCHER"</h3>
+                    <p>Proyecto Universitario Colaborativo | mayo - julio 2025</p>
+                    <ul>
+                        <li>Desarrollo de una aplicación funcional utilizando Java para guiar a los usuarios a clasificar residuos y obtener recompensas por estos</li>
+                        <li>en un equipo de 4 miembros para definir requerimientos, asignar tareas y cumplir con los deadlines del proyecto.</li>
+                        <li>Demostración de habilidades sólidas en programación orientada a objetos (POO)</li>
+                    </ul>
+                </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-sync-alt"></i> Actualizaciones (Cursos/Certificaciones)</h2>
+                <div class="update-item">
+                    <h3>Curso Inteligencia Artificial</h3>
+                    <p>Plataforma Online | 2025</p>
+                </div>
+                <div class="update-item">
+                    <h3>Curso Mendix</h3>
+                    <p>Mendix | 2025</p>
+                </div>
+                <div class="update-item">
+                    <h3>Curso Python</h3>
+                    <p>Plataforma Online | 2025</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

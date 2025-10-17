@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum</title>
+
+  <!-- Fuentes y Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Open+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <style>
+    @page { size: A4; margin: 0; }
+    body { margin: 0; padding: 0; background-color: #e6e6e6; }
+    page {
+      background: white;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+      width: 21cm;
+      height: 29.7cm;
+      overflow: hidden;
+    }
+    .leftPanel {
+      width: 27%;
+      background-color: #292929;
+      color: white;
+      float: left;
+      height: 100%;
+      padding: 1cm;
+      box-sizing: border-box;
+    }
+    .rightPanel {
+      width: 73%;
+      float: left;
+      height: 100%;
+      padding: 1cm 2cm;
+      box-sizing: border-box;
+    }
+    img { width: 4cm; height: 4cm; border-radius: 50%; border: 0.15cm solid white; object-fit: cover; display: block; margin-bottom: 1cm; }
+    .bottomLineSeparator { border-bottom: 0.05cm solid #fff; margin-bottom: 0.5cm; padding-bottom: 0.5cm; }
+    .leftPanel .smallText, .leftPanel .smallText span, .leftPanel .smallText p, .smallText a { font-size: 0.45cm; }
+    .smallText, .smallText span, .smallText p, .smallText a { font-family: 'Source Sans Pro', sans-serif; text-align: justify; }
+    .contactIcon { width: 0.5cm; text-align: center; }
+    .leftPanel, .leftPanel a { color: #bebebe; text-decoration: none; }
+
+    /* Skills CSS */
+    .skill {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-bottom: 0.3cm;
+    }
+
+    .bolded { font-weight: bold; }
+    .white { color: white; }
+    h1 { font-family: 'Julius Sans One', sans-serif; font-weight: 300; font-size: 1.2cm; transform: scale(1, 1.15); margin-bottom: 0.2cm; margin-top: 0.2cm; text-transform: uppercase; }
+    h3 { font-family: 'Open Sans', sans-serif; }
+    @media print { body { width: 21cm; height: 29.7cm; margin: 0; } page { margin: 0; box-shadow: none; } }
+  </style>
+</head>
+
+<body>
+  <page>
+    <!-- Panel Izquierdo -->
+    <div class="leftPanel">
+      <!-- Imagen de perfil -->
+      <img src="juanjo.jpeg" alt="Foto de perfil">
+
+      <!-- Contacto -->
+      <div class="item bottomLineSeparator">
+        <h2>CONTACT</h2>
+        <div class="smallText">
+          <p><i class="fa fa-phone contactIcon" aria-hidden="true"></i>+(52) 4951323266</p>
+          <p><i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
+            <a href="mailto:24290645@utcalvillo.edu.mx">24290645@utcalvillo.edu.mx</a>
+          </p>
+          <p><i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>Calvillo, Mexico</p>
+          <p><i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+            <a href="#">JuanJoseSaucedoVera</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="item bottomLineSeparator">
+        <h2>SKILLS</h2>
+        <div class="smallText">
+          <div class="skill"><span>C++</span></div>
+          <div class="skill"><span>JavaScript</span></div>
+          <div class="skill"><span>Python</span></div>
+        </div>
+      </div>
+
+      <!-- Educación -->
+      <div class="item">
+        <h2>EDUCATION</h2>
+        <div class="smallText">
+          <p class="bolded white">Ingeniería en IA</p>
+          <p>Universidad Tecnológica de Calvillo</p>
+          <p>2024 - 2027</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel Derecho -->
+    <div class="rightPanel"> 
+      <div>
+        <h1>Juan Jose Saucedo Vera</h1>
+        <div class="smallText">
+          <h3>Ingeniero en IA</h3>
+        </div>
+      </div>
+
+      <div>
+        <h2>About Me</h2>
+        <div class="smallText">
+          <p>
+            Elegí esta universidad por ser una de las mejores y la más cercana. Al principio mis expectativas no eran las mejores, pero después me di cuenta de lo buena que era, sobrepasando mis expectativas.
+          </p>
+        </div>
+        <div>
+          <h2>Experiencia personal</h2>
+        </div>
+        <div class="smallText">
+          2024-2025:    Ahora mismo estoy en la universidad, estoy en 4º cuatrimestre. Hasta el momento hemos trabajado en un proyecto de cultivos, específicamente en un proyecto de riego automático. Lo hemos desarrollado desde NetBeans, creando una aplicación para dispositivos móviles que permite, con solo presionar un botón, abrir o cerrar el sistema de riego. Además, es posible cambiar el tipo de riego con un clic.
+        </div>
+      </div>
+    </div>
+  </page>
+</body>
+</html>

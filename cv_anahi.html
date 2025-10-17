@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV_RocioAnahi (Estilo Melocotón)</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --primary-light: #ffebdf;
+            /* Fondo melocotón claro */
+            --primary-dark: #cc9683;
+            /* Tono más oscuro para el contraste */
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-page: #f9f9f9;
+            --section-title: #2c3e50;
+        }
+
+        /* ESTILO DEL CUERPO */
+        body {
+            background-color: var(--bg-page);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* Fuente base */
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        /* CONTENEDOR PRINCIPAL (CV) */
+        .hoja-cv {
+            max-width: 850px;
+            /* Ancho ajustado */
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+            min-height: 1200px;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- LAYOUT DE COLUMNAS (XL - Escritorio) --- */
+
+        .col-sidebar {
+            width: 40%;
+            /* Un poco más de espacio lateral */
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            padding: 40px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .col-main {
+            width: 60%;
+            padding: 40px 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FORMAS ORGÁNICAS DE FONDO (Melocotón, parte de la columna lateral) */
+        .col-sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-light);
+            z-index: -1;
+        }
+
+        /* Contenedor para que el perfil quede en el fondo melocotón */
+        .profile-container {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* El borde sutil */
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* INFORMACIÓN DE CABECERA (NOMBRE Y TÍTULO) */
+        .nombre-cv h1 {
+            font-family: 'Dancing Script', cursive;
+            /* Fuente Script */
+            color: var(--text-dark);
+            font-size: 3.5em;
+            margin: 0;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .nombre-cv p {
+            color: var(--text-dark);
+            font-size: 1.1em;
+            margin-top: 5px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* SECCIONES LATERALES (CONTACTO, APTITUDES) */
+        .section-lateral {
+            margin-bottom: 35px;
+        }
+
+        .section-lateral h3 {
+            color: var(--section-title);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-dark);
+            /* Línea de color */
+        }
+
+        .contact-item,
+        .skill-item {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .contact-item .fas,
+        .contact-item .fab {
+            margin-right: 10px;
+            color: var(--primary-dark);
+            font-size: 1.1em;
+        }
+
+        .skill-item::before {
+            content: "\2022";
+            /* Punto de lista */
+            color: var(--primary-dark);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* SECCIONES PRINCIPALES (ACERCA DE MÍ, FORMACIÓN, EXPERIENCIA, IDIOMAS) */
+        .section-principal {
+            margin-bottom: 40px;
+        }
+
+        .section-principal h2 {
+            color: var(--section-title);
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-principal h2 .fas {
+            margin-right: 15px;
+            font-size: 1.2em;
+            color: var(--primary-dark);
+        }
+
+        .about-me p {
+            color: var(--text-dark);
+            font-size: 1em;
+        }
+
+        /* ÍTEMS DE EXPERIENCIA/EDUCACIÓN */
+        .item-row {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .icon-box {
+            color: var(--primary-dark);
+            font-size: 1.8em;
+            margin-right: 20px;
+            padding-top: 5px;
+        }
+
+        .item-details h3 {
+            color: var(--text-dark);
+            font-size: 1.1em;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .item-details p {
+            font-size: 0.9em;
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        /* BARRAS DE IDIOMAS */
+        .idiom-item {
+            margin-bottom: 10px;
+        }
+
+        .idiom-item span {
+            display: block;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .idiom-bar {
+            background: #eee;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .idiom-level {
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: width 0.5s ease-in-out;
+        }
+
+
+        /* *************
+         * MEDIA QUERIES (RESPONSIVE)
+         *************
+         */
+
+        /* MD (Medium/Tablet) - Máximo 850px */
+        @media (max-width: 850px) {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+
+            .hoja-cv {
+                min-height: auto;
+                box-shadow: none;
+                flex-direction: column;
+                /* MD: Apila las columnas (100% de ancho) */
+            }
+
+            .col-sidebar,
+            .col-main {
+                width: 100%;
+                /* MD: Ambas columnas al 100% */
+                padding: 30px 20px;
+            }
+
+            /* Ajuste de Tipografía MD */
+            .nombre-cv h1 {
+                font-size: 3em;
+            }
+
+            .section-principal h2 {
+                font-size: 1.8em;
+            }
+
+            .item-row {
+                align-items: flex-start;
+            }
+
+            .icon-box {
+                margin-right: 15px;
+                font-size: 1.6em;
+            }
+        }
+
+        /* XS (Extra Small/Móvil) - Máximo 550px */
+        @media (max-width: 550px) {
+
+            .col-sidebar,
+            .col-main {
+                padding: 20px 15px;
+            }
+
+            /* Ajuste de Tipografía XS */
+            .nombre-cv h1 {
+                font-size: 2.5em;
+            }
+
+            .nombre-cv p {
+                font-size: 0.9em;
+            }
+
+            .section-principal h2 {
+                font-size: 1.5em;
+            }
+
+            .section-lateral h3 {
+                font-size: 1.2em;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hoja-cv">
+        <div class="col-sidebar">
+            <div class="profile-container">
+                <img src="anahi.jpeg" class="profile-pic">
+                <div class="nombre-cv">
+                    <h1>Rocio Anahi Duran Rodriguez</h1>
+                    <p>T.S.U. en Inteligencia Artificial</p>
+                </div>
+            </div>
+
+            <div class="section-lateral">
+                <h3>CONTACTO</h3>
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i> <span>Celular:495 121 4238</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> <span>Correo electrónico: 2419048@utcalvillo.edu.mx</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i> <span>Redes sociales: Anahi Rdz</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> <span>Dirección: La Rinconada, Calvillo, Aguascalientes</span>
+                </div>
+            </div>
+
+            <div class="section-lateral">
+                <h3>APTITUDES</h3>
+                <div class="skill-item">Analisis social</div>
+                <div class="skill-item">Gestión de proyectos</div>
+                <div class="skill-item">Capacidad de liderazgo</div>
+                <div class="skill-item">Comunicación estratégica</div>
+                <div class="skill-item">Trabajo en equipo</div>
+                <div class="skill-item">Comunicación activa</div>
+                <div class="skill-item">Escucha activa</div>
+            </div>
+
+        </div>
+
+        <div class="col-main">
+            <div class="section-principal about-me">
+                <h2>ACERCA DE MÍ</h2>
+                <p>
+                    Soy Técnico Superior en Inteligencia Artificial con formación en análisis de datos,
+                    aprendizaje automático y desarrollo de soluciones inteligentes. Me apasiona aplicar
+                    la tecnología para resolver problemas reales y optimizar procesos mediante el uso
+                    de modelos predictivos y automatización.
+                </p>
+                <p>
+                    Busco seguir creciendo profesionalmente
+                    en entornos donde pueda aportar innovación, eficiencia y creatividad.
+                </p>
+            </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-graduation-cap"></i> EDUCACIÓN</h2>
+                <div class="item-row">
+                    <div class="icon-box"><i class="fas fa-university"></i></div>
+                    <div class="item-details">
+                        <h3>Universidad Tecnologica de Calvillo</h3>
+                        <p>Desarrollo de Software Multiplataforma (IA)</p>
+                    </div>
+                </div>
+                <div class="item-row">
+                    <div class="icon-box"><i class="fas fa-user-graduate"></i></div>
+                    <div class="item-details">
+                        <h3>TBC "La Rinconada"</h3>
+                        <p>Enfermeria y Ofimatica basicas</p>
+                    </div>
+                </div>
+                <div class="item-row">
+                    <div class="icon-box"><i class="fas fa-school"></i></div>
+                    <div class="item-details">
+                        <h3>Telesecundaria "Agustin Yañez"</h3>
+                        <p>NO.124</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-briefcase"></i> EXPERIENCIA LABORAL</h2>
+                <div class="item-row">
+                    <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+                    <div class="item-details">
+                        <h3>Punto Singular</h3>
+                        <p>Actualmente.</p>
+                    </div>
+                </div>
+                <div class="item-row">
+                    <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+                    <div class="item-details">
+                        <h3>Tutour</h3>
+                        <p>2021-2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-principal">
+                <h2><i class="fas fa-comments"></i> IDIOMA</h2>
+                <div class="idiom-item">
+                    <span>Inglés</span>
+                    <div class="idiom-bar">
+                        <div class="idiom-level" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="idiom-item">
+                    <span>Francés</span>
+                    <div class="idiom-bar">
+                        <div class="idiom-level" style="width: 20%;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

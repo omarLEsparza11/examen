@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículum Jose David Bárcenas</title>
+
+  <style>
+    /* Centramos el cuerpo de la página */
+    body {
+      background-color: #eeeeee;
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Contenedor principal (como una hoja) */
+    .cv {
+      width: 800px;
+      background-color: white;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Columna izquierda: fondo oscuro */
+    .left {
+      background-color: #3f3335;
+      color: white;
+      width: 35%;
+      padding: 30px;
+    }
+
+    /* Columna derecha: contenido principal */
+    .right {
+      width: 65%;
+      padding: 30px;
+    }
+
+    /* Imagen de perfil redonda */
+    .photo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .photo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+    }
+
+    /* Estilos de sección */
+    h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    h2 {
+      margin: 5px 0 20px 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    h3 {
+      margin-top: 30px;
+      font-size: 14px;
+      border-bottom: 1px solid #999;
+      padding-bottom: 5px;
+    }
+
+    /* Barra de progreso para idiomas */
+    .lang {
+      margin-bottom: 15px;
+    }
+
+    .bar {
+      background-color: #999;
+      height: 6px;
+      margin-top: 3px;
+    }
+
+    .bar-fill {
+      background-color: #ffffff;
+      height: 6px;
+    }
+
+    /* Listas sin viñetas */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenedor principal del CV -->
+  <div class="cv">
+
+    <!-- Columna izquierda -->
+    <div class="left">
+
+      <!-- Foto de perfil -->
+      <div class="photo">
+        <img src="david.jpeg" alt="Foto de perfil">
+      </div>
+
+      <!-- Información de contacto -->
+      <div class="contacto">
+        <h3>CONTACTO</h3>
+        <p><strong>Teléfono:</strong><br>(55) 1234-5678</p>
+        <p><strong>Mail:</strong><br>holaesitincreible.com</p>
+        <p><strong>Dirección:</strong><br>Calle Cualquiera 123, Cualquier lugar.</p>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="idiomas">
+        <h3>IDIOMAS</h3>
+
+        <div class="lang">
+          <p>Inglés</p>
+          <div class="bar"><div class="bar-fill" style="width: 40%;"></div></div>
+        </div>
+
+        <div class="lang">
+          <p>Alemán</p>
+          <div class="bar"><div class="bar-fill" style="width: 50%;"></div></div>
+        </div>
+
+        <div class="lang">
+          <p>Portugués</p>
+          <div class="bar"><div class="bar-fill" style="width: 74%;"></div></div>
+        </div>
+      </div>
+
+      <!-- Referencias -->
+      <div class="referencias">
+        <h3>REFERENCIAS</h3>
+        <p><strong>Sandra Haro</strong><br>Encargada de Personal<br>(55) 1234-5678</p>
+        <p><strong>Ricardo Salinas</strong><br>Encargado de Personal<br>(55) 1234-5678</p>
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="right">
+
+      <!-- Nombre y título -->
+      <h1>JOSE DAVID BARCENAS DE LOERA</h1>
+      <h2>Ingeniero en Inteligencia Artificial</h2>
+
+      <!-- Resumen -->
+      <p>Me recibí de Ingeniero en Inteligencia Artificial en el año 2027, y estoy en busca de un nuevo trabajo. Actualmente estoy cursando especialización en redes neuronales. Me considero una persona responsable y ordenada. Buscando mi nueva experiencia laboral.</p>
+
+      <!-- Educación -->
+      <h3>EDUCACIÓN</h3>
+      <ul>
+        <li><strong>Universidad Tecnológica de Calvillo</strong><br>Graduado con honores académicos. Jefa en Investigación de redes neuronales.</li>
+        <li><strong>Escuela Secundaria Técnica 29</strong><br>Graduado con honores. Vicepresidente del Club de Arte, 2015.</li>
+        <li><strong>Escuela Primaria Anastasios Rodrígues</strong><br>Actualmente estudiando. Vicepresidente del Club de Curso, 2018.</li>
+      </ul>
+
+      <!-- Experiencia -->
+      <h3>EXPERIENCIA</h3>
+      <ul>
+        <li><strong>Asistente de Gerencia:</strong><br>Seguimiento de agenda, revisión de documentos y creación de presentaciones mensuales.</li>
+        <li><strong>Pasantía Administrativa:</strong><br>Recepción de clientes, organización de archivo, manejo de conmutador.</li>
+        <li><strong>Atención al Público:</strong><br>Atención personal a clientes, seguimiento de stock y logística.</li>
+      </ul>
+
+      <!-- Cursos -->
+      <h3>CURSOS Y MASTERCLASS</h3>
+      <ul>
+        <li><strong>Curso de Administración:</strong><br>Administración de oficinas y liderazgo de equipos.</li>
+        <li><strong>Curso de Manejo de Redes:</strong><br>Marketing en redes sociales y expansión de negocios.</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Currículum Vitae</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9; /* Fondo de la web */
+            display: flex; /* Para centrar la "página" */
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .cv-page {
+            /* Estilo que simula una página A4 o un documento */
+            width: 100%;
+            max-width: 800px; /* Ancho máximo de la página */
+            background-color: #ffffff; /* Fondo blanco de la página */
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .section-content p, .section-content ul {
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        ul {
+            list-style: none; /* Elimina las viñetas predeterminadas */
+            padding-left: 0;
+        }
+
+        li::before {
+            content: "•"; /* Agrega una viñeta personalizada */
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .job-title, .course-name {
+            font-weight: bold;
+        }
+
+        .institution, .duration {
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* ESTILOS PARA LA IMAGEN DE PERFIL AÑADIDOS */
+        .profile-picture-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .profile-picture {
+            width: 150px; /* Tamaño de la imagen */
+            height: 150px; /* Asegura que sea cuadrada */
+            border-radius: 5%; /* Bordes ligeramente redondeados */
+            object-fit: cover; /* Asegura que la imagen no se distorsione */
+            border: 4px solid #007bff; /* Borde azul */
+        }
+        /* FIN DE ESTILOS AÑADIDOS */
+    </style>
+</head>
+<body>
+    <div class="cv-page">
+        <div class="header">
+            <h1>AARON ROMO</h1>
+
+            <div class="profile-picture-container">
+                <img src="aaron.jpeg" alt="Foto de Perfil" class="profile-picture">
+            </div>
+            <div class="contact-info">
+                <p>
+                    <a href="tel:4951037492">495 103 7492</a> |
+                    <a href="mailto:24250601@utcalvillo.edu.mx">24250601@utcalvillo.edu.mx</a> |
+                    <a href="https://de.linkedin.com/" target="_blank">LinkedIn</a> |
+                    <a href="https://www.behance.net/search/projects/web%20design%20portfolio" target="_blank">Portfolio/Web</a>
+                </p>
+                <p>Jalpa</p>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="section">
+            <h2>📝 Perfil Profesional</h2>
+            <div class="section-content">
+                <p>
+                    Soy Aaron, tengo 19 años y estudio actualmente en la Universidad Tecnológica de Calvillo en la carrera de Inteligencia Artificial. 
+                    Me apasiona la programación y el desarrollo web, disfruto aprender cosas nuevas y ponerlas en práctica. 
+                    Soy una persona responsable, creativa y comprometida con mis objetivos. Me gusta trabajar en equipo, el deporte y la música.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>💼 Experiencia Laboral</h2>
+            <div class="section-content">
+                
+                <h3><span class="job-title">Cocinero en Roblox</span></h3>
+                <p class="institution">CCV Pizzas 1 | <span class="duration">Antier - Ayer</span></p>
+                <ul>
+                    <li>Adquirí conocimientos preparando pizzas para los turistas.</li>
+                    <li>Desarrollé habilidades en atención al cliente y cobro.</li>
+                </ul>
+
+                <h3><span class="job-title">Aprendiz en despacho de arquitectura</span></h3>
+                <p class="institution">ANTPAT | <span class="duration">2022 - 2023</span></p>
+                <ul>
+                    <li>Aprendí a usar AutoCAD de forma profesional.</li>
+                    <li>Desarrollé habilidades en organización y doblado de planos.</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🎓 Educación</h2>
+            <div class="section-content">
+                
+                <p><span class="course-name">Preparatoria</span></p>
+                <p class="institution">CECYTEA</p>
+
+                <p><span class="course-name">Francés</span></p>
+                <p class="institution">Centro de Idiomas UTC | <span class="duration">2025</span></p>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🛠️ Habilidades</h2>
+            <div class="section-content">
+                <p>
+                    Python, Ciencia de Datos, Java, Marketing Digital, AutoCAD.
+                </p>
+                <p>
+                    Liderazgo, Trabajo en equipo, Comunicación efectiva, Resolución de problemas.
+                </p>
+                <p>
+                    Español (Nativo), Inglés (Intermedio B1), Francés (Básico A2).
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
